@@ -1,3 +1,5 @@
+# import Link from "./generated/prisma.graphql"
+
 type Query {
   info: String!
   feed: [Link!]!
@@ -5,10 +7,18 @@ type Query {
 
 type Mutation {
   post(url: String!, description: String!): Link!
+  signup(email: String!, password: String!, name: String!): AuthPayload
+  login(email: String!, password: String!): AuthPayload
 }
 
-type Link {
+type AuthPayload {
+  token: String
+  user: User
+}
+
+type User {
   id: ID!
-  description: String!
-  url: String!
+  name: String!
+  email: String!
+  links: [Link!]!
 }
