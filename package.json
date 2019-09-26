@@ -1,33 +1,16 @@
 {
-  "name": "hackernews-react-apollo",
-  "version": "0.1.0",
+  "name": "client-cms-contentful",
+  "version": "1.0.0",
   "private": true,
-  "dependencies": {
-    "apollo-boost": "^0.1.22",
-    "apollo-link-context": "^1.0.10",
-    "apollo-link-ws": "^1.0.10",
-    "graphql": "^14.0.2",
-    "react": "^16.6.3",
-    "react-apollo": "^2.3.1",
-    "react-dom": "^16.6.3",
-    "react-router": "^4.3.1",
-    "react-router-dom": "^4.3.1",
-    "react-scripts": "2.1.1",
-    "subscriptions-transport-ws": "^0.9.15"
-  },
+  "repository": "git@github.com:themehakvohra/hackernews-clone",
+  "author": "Mehak Vohra <watthemehak@gmail.com>",
+  "license": "MIT",
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "start": "concurrently --names \"CLIENT,SERVER\" -c \"white.bgRed,white.bgBlue\"  \"yarn start:client\" \"yarn start:server\" ",
+    "start:client": "cd client && yarn start",
+    "start:server": "cd server && yarn start"
   },
-  "eslintConfig": {
-    "extends": "react-app"
-  },
-  "browserslist": [
-    ">0.2%",
-    "not dead",
-    "not ie <= 11",
-    "not op_mini all"
-  ]
+  "dependencies": {
+    "concurrently": "^4.1.2"
+  }
 }

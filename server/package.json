@@ -8,5 +8,8 @@
     "graphql-yoga": "^1.16.7",
     "jsonwebtoken": "^8.4.0",
     "prisma-binding": "^2.2.8"
+  },
+  "scripts": {
+    "start": "node src/index.js"
   }
 }
